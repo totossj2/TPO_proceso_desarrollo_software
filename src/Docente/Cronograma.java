@@ -48,5 +48,34 @@ public class Cronograma {
             }
         }
     }**/
+
+    private Docente docente;
+    private Curso curso;
+    private boolean cumplePreferencia;
+
+    public Cronograma(Docente docente, Curso curso) {
+        this.docente = docente;
+        this.curso = curso;
+        preferencia = docente.getPreferencia();
+        horario = curso.getTurno();
+        setCumplePreferencia(docente, curso);
+    }
+
+    Turnos preferencia;
+
+    Turnos horario;
+
+    public void setCumplePreferencia(Docente docente, Curso curso) {
+        if (docente.getPreferencia() != curso.getTurno()) {
+            cumplePreferencia = false ;
+        }
+        cumplePreferencia = true;
+    }
+
+    public void printCronograma (){
+        System.out.println("Cronograma de curso: " + curso.getNombre() + " " + curso.getTurno() + " Docente: "+docente.getNombre());
+    }
+
+
 }
 

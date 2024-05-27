@@ -14,6 +14,8 @@ import ControladorPago.MedioPago;
 import ControladorPago.MercadoPago;
 import ControladorInformes.ControladorInformes;
 import Docente.Docente;
+import Docente.Cronograma;
+
 import ControladorInformes.FactoriaInforme;
 import ControladorInformes.TipoDeInforme;
 import ControladorInformes.Informe;
@@ -64,10 +66,15 @@ public class main {
         Turnos tarde = Turnos.TARDE;
         Turnos noche = Turnos.NOCHE;
 
+
+
+
         Curso curso1 = new Curso(1, 1, "Aula 1", "14:00-17:00", "Programacion I",maniana,"Lunes","30");
         controladorCursos.addCurso(curso1);
         Docente tua = new Docente("David", "Tua",12345678,maniana);
         tua.asignarDocente(curso1);
+        Cronograma cronograma1 = new Cronograma(tua, curso1);
+        cronograma1.printCronograma();
 
         Curso curso2 = new Curso(2, 2, "Aula 2", "18:00-20:00", "Programacion II",noche,"Martes","25");
         controladorCursos.addCurso(curso2);

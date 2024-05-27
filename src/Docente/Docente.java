@@ -17,13 +17,13 @@ public class Docente{
     private ControladorInformes controladorInformes = ControladorInformes.getInstance();
     private List<Curso> cursosAsignados = new ArrayList();
     private List<String> Disponibilidad;
-    private Turnos preferencias;
+    private Turnos preferencia;
 
-    public Docente(String nombre, String apellido, int legajo,Turnos preferencias) {
+    public Docente(String nombre, String apellido, int legajo,Turnos preferencia) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.legajo = legajo;
-        this.preferencias = preferencias;
+        this.preferencia = preferencia;
     }
 
     public void asignarDocente(Curso curso) {
@@ -49,8 +49,12 @@ public class Docente{
         return legajo;
     }
 
-    public Turnos getPreferencias() {
-        return preferencias;
+    public Turnos getPreferencia() {
+        return preferencia;
+    }
+
+    public String getNombre(){
+        return nombre +" " +apellido;
     }
 }
 
