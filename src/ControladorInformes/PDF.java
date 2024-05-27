@@ -14,24 +14,24 @@ public class PDF implements Informe {
 
     @Override
     public void generarInforme(Curso curso, List<Curso> cursosAsignados) {
-        List<String> excel = new ArrayList();
+        List<String> pdf = new ArrayList();
         for(Curso iterador : cursosAsignados){
             if(iterador.getNombre().equals(curso.getNombre())){
                 String horario = iterador.getHorario();
                 String aulaAsignada = iterador.getAulaAsignada();
                 String cantAlumnos = iterador.getCantAlumnos();
-                excel.add(iterador.getNombre());
-                excel.add(horario);
-                excel.add(aulaAsignada);
-                excel.add(cantAlumnos);
+                pdf.add(iterador.getNombre());
+                pdf.add(horario);
+                pdf.add(aulaAsignada);
+                pdf.add(cantAlumnos);
             }
         }
-        leerExcel(excel);
+        leerPDF(pdf);
 
     }
 
-    private void leerExcel(List<String> excel){
-        for (String string : excel) {
+    private void leerPDF(List<String> pdf){
+        for (String string : pdf) {
             System.out.println(string);
         }
     }

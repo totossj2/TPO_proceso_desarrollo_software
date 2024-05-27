@@ -1,9 +1,12 @@
 package Docente;
 
 import ControladorCurso.Curso;
+import ControladorCurso.Turnos;
+
 import java.util.List;
 
 public class Cronograma {
+    /**
     protected Curso curso;
     protected Docente docente;
     private List<Cronograma> cronograma;
@@ -18,10 +21,10 @@ public class Cronograma {
         return Disponibilidad.contains(turno);
     }
 
-    public boolean verificarPreferencia(String turno, int legajo) {
+    public boolean verificarPreferencia(Turnos turno, int legajo) {
         for (Docente docente : docentes) {
             if (docente.getLegajo() == legajo) {
-                return docente.getPreferencias().contains(turno);
+                return (docente.getPreferencias() == turno);
             }
         }
         return false;
@@ -44,6 +47,6 @@ public class Cronograma {
                 System.out.println("No se encontro ese docente");
             }
         }
-    }
+    }**/
 }
 

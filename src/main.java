@@ -2,6 +2,7 @@ import ControladorCarrera.Carrera;
 import ControladorCurso.ControladorCursos;
 import ControladorCurso.Curso;
 import ControladorAlumno.Alumno;
+import ControladorCurso.Turnos;
 import ControladorInscripciones.ControladorInscripciones;
 import ControladorMateria.Materia;
 import ControladorMateria.ControladorMateria;
@@ -59,24 +60,28 @@ public class main {
         controladorAlumno.aprobarMateria(1, "Programacion I");
 
         //Agregamos cursos y asignamos docentes
-        Curso curso1 = new Curso(1, 1, "Aula 1", "14:00-17:00", "Programacion I","Mañana","Lunes","30");
+        Turnos maniana = Turnos.MANIANA;
+        Turnos tarde = Turnos.TARDE;
+        Turnos noche = Turnos.NOCHE;
+
+        Curso curso1 = new Curso(1, 1, "Aula 1", "14:00-17:00", "Programacion I",maniana,"Lunes","30");
         controladorCursos.addCurso(curso1);
-        Docente tua = new Docente("David", "Tua",12345678,"Mañana");
+        Docente tua = new Docente("David", "Tua",12345678,maniana);
         tua.asignarDocente(curso1);
 
-        Curso curso2 = new Curso(2, 2, "Aula 2", "18:00-20:00", "Programacion II","Noche","Martes","25");
+        Curso curso2 = new Curso(2, 2, "Aula 2", "18:00-20:00", "Programacion II",noche,"Martes","25");
         controladorCursos.addCurso(curso2);
-        Docente aquino = new Docente("Felipe", "De Aquino",421231223,"Noche");
+        Docente aquino = new Docente("Felipe", "De Aquino",421231223,noche);
         tua.asignarDocente(curso2);
 
-        Curso curso3 = new Curso(3, 3, "Aula 1", "18:00-20:00", "Programacion III","Tarde","Miercoles","20");
+        Curso curso3 = new Curso(3, 3, "Aula 1", "18:00-20:00", "Programacion III",tarde,"Miercoles","20");
         controladorCursos.addCurso(curso3);
-        Docente wehbe = new Docente("Ricardo", "Wehbe",427231223,"Mañana");
+        Docente wehbe = new Docente("Ricardo", "Wehbe",427231223,maniana);
         wehbe.asignarDocente(curso3);
 
-        Curso curso4 = new Curso(4, 4, "Aula 2", "14:00-17:00","Calculo I","Mañana","Jueves","40");
+        Curso curso4 = new Curso(4, 4, "Aula 2", "14:00-17:00","Calculo I",maniana,"Jueves","40");
         controladorCursos.addCurso(curso4);
-        Docente edga = new Docente("Edgardo", "Crespo",427211223,"Tarde");
+        Docente edga = new Docente("Edgardo", "Crespo",427211223,tarde);
         edga.asignarDocente(curso4);
 
 
@@ -105,8 +110,6 @@ public class main {
 
 
         System.out.println("Generar informe en PDF");
-
-
         controladorInformes.generarInforme(curso3, wehbe, TipoDeInforme.PDF);
     }
 }

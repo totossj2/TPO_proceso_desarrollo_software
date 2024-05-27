@@ -23,6 +23,7 @@ public class ControladorInformes{
         List<Curso> cursosAsignados = docente.getCursosAsignados();
         FactoriaInforme factoriaInforme = new FactoriaInforme();
         Informe informe = factoriaInforme.generarInforme(tipo, cursosAsignados, curso);
+        informe.generarInforme(curso, cursosAsignados);
 
     }
 }

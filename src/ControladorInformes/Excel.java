@@ -4,6 +4,7 @@ import java.util.List;
 import ControladorCurso.Curso;
 
 public class Excel implements Informe {
+
     public Excel (Curso curso,List<Curso> cursosAsignados ){
         Curso cursoActual = curso;
         List<Curso> CursosAsignados = cursosAsignados;
@@ -23,6 +24,14 @@ public class Excel implements Informe {
                 informe.add(aulaAsignada);
                 informe.add(cantAlumnos);
             }
+        }
+        leerPDF(informe);
+    }
+
+
+    private void leerPDF(List<String> pdf){
+        for (String string : pdf) {
+            System.out.println(string);
         }
     }
 }

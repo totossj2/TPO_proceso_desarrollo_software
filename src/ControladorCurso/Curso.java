@@ -5,13 +5,13 @@ import java.util.*;
 
 public class Curso {
 
-    public Curso(int idCurso, int idMateria, String aula, String horario, String nombre, String turno, String dia, String cantAlumnos) {
+    public Curso(int idCurso, int idMateria, String aula, String horario, String nombre, Turnos turno, String dia, String cantAlumnos) {
         this.idCurso = idCurso;
         this.idMateria = idMateria;
         this.aula = aula;
         this.horario= horario;
         this.nombre = nombre;
-        this.turno = Turnos.valueOf(turno);
+        this.turno = turno;
         this.dia = dia;
         this.cantAlumnos = cantAlumnos;
     }

@@ -6,6 +6,7 @@ import ControladorInformes.ControladorInformes;
 import ControladorInformes.ControladorInformes;
 import java.util.ArrayList;
 import java.util.List;
+import ControladorCurso.Turnos;
 
 public class Docente{
 
@@ -16,12 +17,13 @@ public class Docente{
     private ControladorInformes controladorInformes = ControladorInformes.getInstance();
     private List<Curso> cursosAsignados = new ArrayList();
     private List<String> Disponibilidad;
-    private String preferencias;
+    private Turnos preferencias;
 
-    public Docente(String nombre, String apellido, int legajo,String preferencias) {
+    public Docente(String nombre, String apellido, int legajo,Turnos preferencias) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.legajo = legajo;
+        this.preferencias = preferencias;
     }
 
     public void asignarDocente(Curso curso) {
@@ -47,7 +49,7 @@ public class Docente{
         return legajo;
     }
 
-    public String getPreferencias() {
+    public Turnos getPreferencias() {
         return preferencias;
     }
 }
